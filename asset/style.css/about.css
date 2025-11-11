@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.logo {
+    font-family: 'Montez', cursive;
+    font-size: 55px;
+    color: #353839;
+}
+
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 75px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 28px;
+border-bottom: 3px solid rgba(0,0,0,0.06);
+box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+background-color: rgba(212, 178, 76, 0.8); ;
+}
+
+.logo {
+    position: fixed;
+    left: 42%;
+    text-align: center;
+    font-family: 'Montez', cursive;
+    font-size: 30px;
+    color: #353839;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  padding: 6px 8px;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  transform: scale(.98);
+  opacity: .9;
+}
+
+.dropdown {
+    min-width: 90px;
+    padding: 15px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    background-color: rgba(212, 178, 76, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+.dropdown-container:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+}
+
+.dropdown a {
+    font-size: 14px;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    margin: 10px;
+}
+
+main.about {
+    padding-top:130px ;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.aboutForm {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Alice', serif;
+    color: #353839;
+}
+
+.motto {
+    font-size: 50px;
+    font-family: 'Montez', cursive;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #353839;
+    text-align: left;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    text-align: left;
+    margin-top: 30px;
+}
+.vision {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+}
+.mission {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+}
+
+.vision, .mission {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.vision h3, .mission h3 {
+  font-size: x-large;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  color: #353839;
+}
+
+.vision p, .mission p {
+  font-size: larger;
+  line-height: 1.7;
+  color: #333;
+}
+
+footer {
+padding: 28px 20px;
+background: #f8f8f8;
+text-align: center;
+border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+footer h2 {
+    margin: 0 0 6px;
+    font-family: 'Montez', cursive;
+    font-size: 45px;
+}
+
+footer h3 {
+    font-family: 'Alice', serif;
+    text-align: center ;
+    font-size: x-large;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-family: 'Alice', serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+footer ul a {
+    text-decoration: none;
+    margin: 25px;
+    font-size: x-large;
+    gap: 20px;
+    text-align: center;
+    color: #353839;
+    cursor: pointer;
+}
+
+footer h4 {
+    margin: auto;
+    font-family: 'Alice', serif;
+    font-size: small;
+}

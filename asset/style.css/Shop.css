@@ -1,14 +1,87 @@
-#horizontalPanel
-{
-    
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#leftBody
-{
-    
+
+.logo {
+    font-family: 'Montez', cursive;
+    font-size: 55px;
+    color: #353839;
 }
 
-#rightBody
-{
-    
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 75px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 28px;
+border-bottom: 3px solid rgba(0,0,0,0.06);
+box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+background-color: rgba(212, 178, 76, 0.8); ;
+}
+
+.logo {
+    position: fixed;
+    left: 42%;
+    text-align: center;
+    font-family: 'Montez', cursive;
+    font-size: 30px;
+    color: #353839;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  padding: 6px 8px;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  transform: scale(.98);
+  opacity: .9;
+}
+
+.dropdown {
+    min-width: 90px;
+    padding: 15px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    background-color: rgba(212, 178, 76, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+.dropdown-container:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+}
+
+.dropdown a {
+    font-size: 14px;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    margin: 10px;
 }

@@ -10,8 +10,9 @@
     color: #353839;
 }
 
+/*yung boong navigation*/
 .navbar {
-position: fixed;
+position: absolute;
 top: 0;
 left: 0;
 right: 0;
@@ -22,7 +23,7 @@ justify-content: space-between;
 padding: 10px 28px;
 border-bottom: 3px solid rgba(0,0,0,0.06);
 box-shadow: 0 1px 0 rgba(0,0,0,0.06);
-background-color: rgba(212, 178, 76, 0.8); ;
+background-color: rgba(212, 178, 76, 0.8);
 }
 
 .logo {
@@ -34,7 +35,7 @@ background-color: rgba(212, 178, 76, 0.8); ;
     color: #353839;
 }
 
-.nav-left, .nav-right {
+.nav-left, .nav-right{
     display: flex;
     align-items: center;
     gap: 18px;
@@ -71,6 +72,7 @@ background-color: rgba(212, 178, 76, 0.8); ;
     opacity: 0;
     visibility: hidden;
     transition: 0.2s ease-in-out;
+    z-index: 2000; /* para pag nag hover sa button hindi siya matakpan ng ibang container */
 }
 
 .dropdown-container:hover .dropdown {
@@ -84,4 +86,122 @@ background-color: rgba(212, 178, 76, 0.8); ;
     border-bottom: 1px solid #000000;
     padding: 8px;
     margin: 10px;
+}
+
+/* body */
+
+/* left body */
+.leftBody{
+  width: 70%;    
+  height: 70%;      
+  max-width: 800px;    
+  max-height: 600px;
+  margin-top: 200px;  
+  margin-left: 20px;   /* left side*/
+  margin-right: auto;  /* center */
+  background: #f0f0f0;
+  padding: 20px;
+  font-family: "Alice", serif;
+  position: relative;
+  box-sizing: border-box;  /* ensures padding is included in width */
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between; /* para yung botton at yung header nasa dulo ng container*/
+  align-items: center;            
+  margin-bottom: 20px;           
+}
+
+.continueShopping
+{
+  width: 150px;
+  height: 25px;
+  margin-left: 100px; 
+  font-family: "Alice", serif;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgba(212, 178, 76, 0.8);
+  border:none;
+}
+
+.carttext
+{
+  font-size: 30px;
+  font-style: Bold;
+  font: optional;
+}
+
+.leftBody hr
+{
+  width: 100%;
+  margin: 5px auto;
+  border: none; 
+  height: 2px;
+  background-color: rgba(212, 178, 76, 0.8);
+}
+
+.iteminfo
+{
+  display: flex;                   
+  align-items: center;             
+  justify-content: space-between; 
+  gap: 5px;                       
+  margin-top: 10px;
+}
+
+/* optional styling for buttons & number */
+.numItem {
+  display: flex;              
+  align-items: center;       
+  gap: 10px;                 
+  border: 2px solid rgba(212, 178, 76, 0.8);     
+  padding: 5px 10px;          
+  width: fit-content;         
+}
+
+.itemimage
+{
+  width: 150px;
+  height: 150px;
+  border: 1px solid;
+  margin-right: 10px; /* space sa information ng item*/
+  float: left;
+}
+
+.numItem button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.iteminfo p {
+  width: 200px;
+  height: 50px;
+  font-size: 15px;  
+  font-size: 15px;
+  margin-right: 15px;
+  font-family: "Alice", serif;
+}
+
+#price
+{
+  font-weight: normal;
+  padding-bottom: 15px;
+}
+
+/*group again para malagay ko sa ilalim ng plus at minus yung remove*/
+.quantity-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* or flex-end to right-align */
+}
+
+.remove {
+  color: gray;
+  padding: 20px;
+  text-align: center;  /* ensures the text itself is centered */
+  cursor: pointer;
 }

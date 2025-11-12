@@ -45,6 +45,7 @@
         </nav>
 
 
+    <div class="containerbody">
         <div class ="leftBody"><!--left side of the panel -->
 
             <div class="container">
@@ -73,10 +74,53 @@
             
             
             <hr>
+        </div>    
+        
+        <div class="rightbody">
+            <form>
+
+             <div class="container">   
+                <h4 id="sub">SUBTOTAL</h4>
+                <h3 id="price">PHP 75.00</h3>
+             </div>
+
+            <hr>
+
+            <h4>Shipping address: </h4><br>
+
+             <!--baka kailangan ko maging specific na word dito like blk: kailangan ko pa mag research kung pano gawin yon -->
+            <input type="text" placeholder="Enter address Here" required id="inputtext"><br>
+
+            <h3 id="pay">Payment Method</h3><br>
+
+            <!--para gawing box ang mga radio-->
+            <div class="paymentoptions">
+            <label class="radio-box">
+               <input type="radio" name="choice" value="COD" required>
+            <span>Cash on Delivery</span>
+            </label>
+
+            <label class="radio-box">
+               <input type="radio" name="choice" value="Gcash" required>
+            <span>GCash</span>
+            </label>
+            </div>
+
+            <br>
+
+            <label id="checkbox">
+            <input type="checkbox" required>
+            <span>I agree to the Terms and Condition</span>
+            </label>
+
+            <br>
+
+            <input type="submit" id="submitbutton" value="Place Order">
+
+            </form>
         </div>
 
-        <br>
+    <div>
 
-      
     </body>
 </html>

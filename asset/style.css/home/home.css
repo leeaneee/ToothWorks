@@ -118,7 +118,7 @@ section p {
 button {
     display: flex;
     background-color: rgba(212, 178, 76, 0.8);
-    color(#353839);
+    color:(#353839);
     padding: 12px 30px;
     border: none;
     font-family: 'Alice', serif;

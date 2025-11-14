@@ -12,7 +12,7 @@
 
 /*yung boong navigation*/
 .navbar {
-position: absolute;
+position: fixed;
 top: 0;
 left: 0;
 right: 0;
@@ -166,8 +166,7 @@ background-color: rgba(212, 178, 76, 0.8);
   width: fit-content;         
 }
 
-.leftBody .itemimage
-{
+.leftBody .itemimage {
   width: 150px; /*auto width at height para pag nilagyan ng image automatic na siya malalagay doon*/
   height: 150px;
   border: 1px solid;

@@ -1,0 +1,654 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+    font-family: 'Montez', cursive;
+    font-size: 55px;
+    color: #353839;
+}
+
+/*yung boong navigation*/
+.navbar {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 75px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 28px;
+border-bottom: 3px solid rgba(0,0,0,0.06);
+box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+background-color: rgba(212, 178, 76, 0.8);
+}
+
+.logo {
+    position: absolute;
+    left: 42%;
+    text-align: center;
+    font-family: 'Montez', cursive;
+    font-size: 30px;
+    color: #353839;
+}
+
+.nav-left, .nav-right{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  padding: 6px 8px;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  transform: scale(.98);
+  opacity: .9;
+}
+
+.dropdown {
+    min-width: 90px;
+    padding: 15px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    background-color: rgba(212, 178, 76, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+    z-index: 2000; /* para pag nag hover sa button hindi siya matakpan ng ibang container */
+}
+
+.dropdown-container:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+}
+
+.dropdown a {
+    font-size: 14px;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    margin: 10px;
+}
+
+/* body */
+.containerbody
+{
+  display: flex;                
+  justify-content: space-between; 
+  align-items: flex-start;      
+  gap: 20px;                  
+  padding: 20px;
+}
+
+/* left body */
+.leftBody{
+  width: 70%;    
+  height: 70%;      
+  max-width: 800px;    
+  max-height: 600px;
+  margin-top: 150px;  
+  margin-left: 20px;   /* left side*/
+  margin-right: auto;  /* center */
+  /*background: #f0f0f0;*/
+  padding: 20px;
+  font-family: "Alice", serif;
+  position: relative;
+  box-sizing: border-box;  /* ensures padding is included in width */
+}
+
+.leftBody .container {
+  display: flex;
+  justify-content: space-between; /* para yung botton at yung header nasa dulo ng container*/
+  align-items: center;            
+  margin-bottom: 20px;           
+}
+
+.leftBody .continueShopping{
+  width: 150px;
+  height: 25px;
+  margin-left: 100px; 
+  font-family: "Alice", serif;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgba(212, 178, 76, 0.8);
+  border:none;
+}
+
+.leftBody .carttext
+{
+  font-size: 30px;
+  font-style: Bold;
+  font: optional;
+}
+
+.leftBody hr
+{
+  width: 100%;
+  margin: 5px auto;
+  border: none; 
+  height: 2px;
+  background-color: rgba(212, 178, 76, 0.8);
+}
+
+.leftBody .iteminfo
+{
+  display: flex;                   
+  align-items: center;             
+  justify-content: space-between; 
+  gap: 5px;                       
+  margin-top: 10px;
+}
+
+.leftBody .numItem {
+  display: flex;              
+  align-items: center;       
+  gap: 10px;                 
+  border: 2px solid rgba(212, 178, 76, 0.8);     
+  padding: 5px 10px;          
+  width: fit-content;         
+}
+
+.leftBody .itemimage
+{
+  width: 150px; /*auto width at height para pag nilagyan ng image automatic na siya malalagay doon*/
+  height: 150px;
+  border: 1px solid;
+  margin-right: 0px; /* space sa information ng item*/
+  float: left;
+}
+
+.leftBody .numItem button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.leftBody .iteminfo p {
+  width: 200px;
+  height: auto;
+  font-size: 15px;  
+  margin-top: 2px;
+  margin-right: 15px;
+  margin-left: 1px;
+  font-family: "Alice", serif;
+}
+
+.leftbody #price
+{
+  font-weight: normal;
+  padding-bottom: 15px;
+  margin-left: 10px;
+}
+
+/*group again para malagay ko sa ilalim ng plus at minus yung remove*/
+.leftBody .quantity-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.leftBody .remove {
+  color: gray;
+  padding: 20px; /* pang align para mas center yung text*/
+  text-align: center;  /* para yung text centered */
+  cursor: pointer;
+}
+
+.rightbody
+{
+  width: 30%;    
+  height: 50%;               
+  max-width: 400px;
+  max-height: 600px;
+  margin-top: 150px;  
+  margin-right: auto;  /* center */
+  /*background: #f0f0f0;*/
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.rightbody .container {
+  display: flex;                 
+  justify-content: space-between;
+  align-items: center;          
+  width: 300px;                  
+  max-height: 10px;
+  box-sizing: border-box;
+}
+
+.rightbody #sub {
+  margin: 0;
+  font-size: 16px;
+  margin-top: 49px;
+  margin-bottom: 1px;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.rightbody #price {
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 70px;
+  font-weight: normal;
+}
+
+.rightbody hr
+{
+  width: 100%;
+  height: 2px;
+  margin-top: 44px; /* pushes hr down */
+  margin-bottom: 0px;
+  border: none;
+  background-color: rgba(212, 178, 76, 0.8);
+}
+
+.rightbody h4
+{
+  margin-top: 15px; /* small gap below hr */
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.rightbody #inputtext
+{
+  width: 100%;
+  height: 100%;
+  max-width: 350px;
+  max-height: 25px;
+  padding: 8px 12px;
+  border: 2px solid rgba(212, 178, 76, 0.8);      
+  border-radius: 5px;
+  outline: none;
+}
+
+.rightbody #pay
+{
+  height: 10px;
+  font-weight: normal;
+  padding-top: 15px;
+  font-size: 15px;
+}
+
+
+.rightbody .paymentoptions {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;              
+}
+
+.rightbody .radio-box {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Alice", serif;
+  font-size: 15px;
+  position: relative;
+}
+
+.rightbody .radio-box input[type="radio"] {
+  display: none;
+}
+
+.rightbody .radio-box span::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  background-color: white;
+  margin-right: 5px;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.rightbody .radio-box input[type="radio"]:checked + span::before {
+  background-color: rgba(212, 178, 76, 0.8);
+  border-color: rgba(212, 178, 76, 0.8);
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+}
+
+
+.rightbody #check
+{
+  border: 2px solid  rgba(212, 178, 76, 0.8);
+}
+
+.rightbody #checkbox
+{
+  display: flex;           /* make label a flex container */
+  align-items: center;     /* vertically center text and box */
+  position: relative;
+  padding-left: 1px;  
+  padding-top: 20px;
+  cursor: pointer;
+  font-family: "Alice", serif;
+  font-size: 15px;
+}
+
+.rightbody #checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.rightbody #checkbox span::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  background-color: white;
+  margin-right: 5px;       /* spacing between box and text */
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.rightbody #checkbox input[type="checkbox"]:checked + span::before {
+  background-color: rgba(212, 178, 76, 0.8);
+  border-color: rgba(212, 178, 76, 0.8);
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+}
+
+
+.rightbody #submitbutton
+{
+    width: 100%;
+    max-width: 420px;
+    height: 30px;
+    background-color: rgba(212, 178, 76, 0.8); /* gold */
+    color: black;                            /* text visible */
+    border: none;
+    outline: none;  /*para hindi na mag show yung border*/
+    font-size: 16px;
+    font-family: "Alice", serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rightbody #submitbutton:hover {
+    background-color: rgba(212, 178, 76, 1); /* darker gold on hover */
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);   /* background blur */
+  background: rgba(0, 0, 0, 0.2); /* transparent dark overlay */
+  display: none;                /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;                /* higher than navbar */
+}
+
+.popup-box {
+  background-color: #fff;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  border-radius: 4px;
+  width: 340px;
+  max-width: 90%;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: "Alice", serif;
+}
+
+.popup-box h2 {
+  font-size: 20px;
+  font-weight: normal;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.popup-btn {
+  padding: 8px 20px;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  background-color: rgba(212, 178, 76, 0.8);
+  color: black;
+  font-family: "Alice", serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+  background-color: rgba(212, 178, 76, 1);
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+.review-box {
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 450px;
+  position: relative;
+}
+
+.review-box .close-popup {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #b30000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.review-box .close-popup:hover {
+  color: red;
+}
+
+.review-list {
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.review-list .review-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+.total-section {
+  border-top: 2px solid rgba(212, 178, 76, 0.8);
+  padding-top: 10px;
+  text-align: center;
+}
+
+
+.summary-box {
+  width: 420px;
+  max-height: 500px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.summary-box::-webkit-scrollbar {
+  width: 6px;
+}
+.summary-box::-webkit-scrollbar-thumb {
+  background: rgba(212, 178, 76, 0.8);
+  border-radius: 4px;
+}
+
+.close-summary {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-summary:hover {
+  color: darkred;
+  transform: scale(1.1);
+}
+
+.order-summary-content {
+  text-align: left;
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.summary-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid rgba(212, 178, 76, 0.8);
+}
+
+.empty-msg {
+  font-size: 1.2rem;
+  color: #444;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.empty-continue {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.empty-continue .continueShopping.empty {
+  background-color: #d4b24c;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.empty-continue .continueShopping.empty:hover {
+  background-color: #b9953a;
+}
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.empty-msg {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.continueShopping {
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.continueShopping:hover {
+  background-color: #1e5bb8;
+}
+
+.continueShopping.topRight {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  margin: 0;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  padding: 3px 8px;
+  background-color: #e6e6e6;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: none;
+  color: #a00;
+  border: none;
+  cursor: pointer;
+}

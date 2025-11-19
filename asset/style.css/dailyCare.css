@@ -86,75 +86,82 @@ background-color: rgba(212, 178, 76, 0.8); ;
     margin: 10px;
 }
 
+
 body {
-    background-color: white;
+  margin-top: 130px; 
+  font-family: 'Alice', serif;
+  background-color: #fff;
+  color: #353839;
 }
 
-main.log {
-    padding-top: 110px;
+
+.dcText h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #353839;
 }
 
-.login {
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 28px 16px;
+.prodContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 0 80px 60px;
 }
 
-.loginText {
-    font-size: 45px;
-    margin: 8px 0;
-    font-weight: 700;
-    left: 42%;
-    color: #353839;
+.prodBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.loginForm {
-    width:420px; max-width:100%;
-    margin: 18px auto;
-    padding: 26px;
-    background:#fff;
-    border-radius:6px;
-    box-shadow:0 8px 30px rgba(212, 178, 76, 0.8);
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    align-items:stretch;
+.prodBox:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.loginForm label {
-    font-size: 20px;
-    color: #353839;
-    text-align: left;
-}
-.loginForm input {
-    height: 40px;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid rgba(212, 178, 76, 0.8);
-}
-.signUp a {
-    text-decoration: underline;
-    color: #353839;
+
+.prodBox img {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
 }
 
-.signButton {
-    width: 100%;
-    height: 46px;
-    font-family: 'Alice', serif;
-    color: #353839;
-    font-size: large;
-    background-color: rgba(212, 178, 76, 0.8);
-    border: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform .12s ease, filter .12s ease;
+
+.prodInfo {
+  background-color: #d4b24c;
+  color: #353839;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
 }
 
-.signButton:hover {
-    transform: translateY(-2px); filter:brightness(.98);
+.prodInfo a {
+color: #353839;
+text-decoration: none;
+}
+
+
+.name {
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.rating {
+  text-align: right;
+  font-size: 14px;
 }
 
 footer {
@@ -198,3 +205,4 @@ footer h4 {
     font-family: 'Alice', serif;
     font-size: small;
 }
+

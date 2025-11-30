@@ -96,6 +96,8 @@ background-color: rgba(212, 178, 76, 0.8);
   align-items: flex-start;      
   gap: 20px;                  
   padding: 20px;
+
+  flex: 1;
 }
 
 /* left body */
@@ -111,7 +113,7 @@ background-color: rgba(212, 178, 76, 0.8);
   padding: 20px;
   font-family: "Alice", serif;
   position: relative;
-  box-sizing: border-box;  /* ensures padding is included in width */
+  box-sizing: border-box;  
 }
 
 .leftBody .container {
@@ -393,4 +395,54 @@ background-color: rgba(212, 178, 76, 0.8);
 
 .rightbody #submitbutton:hover {
     background-color: rgba(212, 178, 76, 1); /* darker gold on hover */
+}
+
+/* footer  */
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+padding: 28px 20px;
+background: #f8f8f8;
+text-align: center;
+border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+footer h2 {
+    margin: 0 0 6px;
+    font-family: 'Montez', cursive;
+    font-size: 45px;
+}
+
+footer h3 {
+    font-family: 'Alice', serif;
+    text-align: center ;
+    font-size: x-large;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-family: 'Alice', serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+footer ul a {
+    text-decoration: none;
+    margin: 25px;
+    font-size: x-large;
+    gap: 20px;
+    text-align: center;
+    color: #353839;
+    cursor: pointer;
+}
+
+footer h4 {
+    margin: auto;
+    font-family: 'Alice', serif;
+    font-size: small;
 }

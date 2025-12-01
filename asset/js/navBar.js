@@ -26,12 +26,8 @@ document.getElementById("reviews").addEventListener("click", function () {
     window.location.href = "reviews.html"; 
 });
 
-document.getElementById("search").addEventListener("click", function () {
-    window.location.href = "reviews.html"; 
-});
-
 document.getElementById("cart").addEventListener("click", function () {
-    window.location.href = "Cart.html"; 
+    window.location.href = "order.html"; 
 });
 
 document.getElementById("user").addEventListener("click", function () {

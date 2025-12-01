@@ -1,3 +1,7 @@
+// Note:
+// ang js file nato ay nag handle ng mga function ng lahat ng page 
+
+
 document.getElementById("home").addEventListener("click", function () {
     window.location.href = "home.html"; 
 });
@@ -32,5 +36,9 @@ document.getElementById("cart").addEventListener("click", function () {
 
 document.getElementById("user").addEventListener("click", function () {
     window.location.href = "profile.html"; 
+});
+
+document.getElementById("shop-all").addEventListener("click", function () {
+    window.location.href = window.location.href; 
 });
 

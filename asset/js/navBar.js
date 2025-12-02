@@ -30,11 +30,16 @@ document.getElementById("cart").addEventListener("click", function () {
     window.location.href = "order.html"; 
 });
 
+document.getElementById("shop-all").addEventListener("click", function () {
+    window.location.href = window.location.href; 
+});
+
 document.getElementById("user").addEventListener("click", function () {
     window.location.href = "profile.html"; 
 });
 
-document.getElementById("shop-all").addEventListener("click", function () {
-    window.location.href = window.location.href; 
+document.getElementById("logout-link").addEventListener("click", function () {
+    window.location.href = "signUp.html"; 
 });
+
 

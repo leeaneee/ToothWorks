@@ -20,34 +20,36 @@
   </head>
 
   <body>
-5    <nav class="navbar">
+    <nav class="navbar">
       <div class="nav-left">
-        <a href="home.html">Home</a>
+        <a href="#" id="home">Home</a>
         <div class="dropdown-container">
-          <a href="#dailycare">Shop All ▾</a>
+          <a href="#" id="shop-all">Shop All▾</a>
           <div class="dropdown">
-            <a href="#dailycare">Daily Care</a>
-            <a href="#freshbreath">Fresh Breath</a>
-            <a href="#dentaltools">Dental Tools</a>
+            <a href="#" id="daily-care">Daily Care</a>
+            <a href="#" id="fresh-breath">Fresh Breath</a>
+            <a href="#" id="dental-tools">Dental Tools</a>
           </div>
         </div>
-        <a href="about.html">About</a>
-        <a href="reviews.html">Reviews</a>
+        <a href="#" id="about">About</a>
+        <a href="#" id="reviews">Reviews</a>
       </div>
 
-      <div class="logo">
-        <h1>ToothWorks</h1>
-      </div>
+      <div class="logo"><h1>ToothWorks</h1></div>
 
       <div class="nav-right">
-        <a href="search.html"><i class="bi bi-search"></i></a>
-        <a href="cart.html" id="bag-icon"><i class="bi bi-bag"></i></a>
-        <a href="user.html"><i class="bi bi-person-circle"></i></a>
+        <a href="#" id="cart"><i class="bi bi-bag"></i></a>
+        <div class="profile-dropdown">
+          <a href="#" class="profile-icon"><i class="bi bi-person-circle"></i></a>
+          <div class="profile-menu">
+            <a href="#" id="user">View Profile</a>
+            <a href="#" id="logout-link">Logout</a>
+          </div>
+        </div>
       </div>
     </nav>
 
     <main id="main-content">
-
       <section id="dailycare" class="shop-section">
         <h2>Daily Care</h2>
         <div class="products">
@@ -181,18 +183,17 @@
           <button id="add-to-bag">Add to bag</button>
         </div>
         <span id="close-popup">&times;</span>
-        
       </div>
     </div>
-    <div class="product">
-  <img src="asset/images/toothbrush.jpg" alt="Toothbrush">
-  <h3>Toothworks Toothbrush Gentle Gum Care Soft Bristles</h3>
-  <p>PHP 75.00</p>
-  <button onclick="addToCart({id: 1, name: 'Toothworks Toothbrush Gentle Gum Care Soft Bristles', price: 75, image: 'asset/images/toothbrush.jpg', quantity: 1})">
-    Add to Cart
-  </button>
-</div>
 
+    <div class="product">
+      <img src="asset/images/toothbrush.jpg" alt="Toothbrush">
+      <h3>Toothworks Toothbrush Gentle Gum Care Soft Bristles</h3>
+      <p>PHP 75.00</p>
+      <button onclick="addToCart({id: 1, name: 'Toothworks Toothbrush Gentle Gum Care Soft Bristles', price: 75, image: 'asset/images/toothbrush.jpg', quantity: 1})">
+        Add to Cart
+      </button>
+    </div>
 
     <footer>
       <h2>ToothWorks</h2>
@@ -210,12 +211,11 @@
       <br /><br />
       <h4>
         <i class="bi bi-c-circle"></i>
-        <small
-          ><span>2025 ToothWorks Dental Clinic. All Rights Reserved.</span></small
-        >
+        <small><span>2025 ToothWorks Dental Clinic. All Rights Reserved.</span></small>
       </h4>
     </footer>
 
+    <script src="asset/js/navBar.js"></script>
     <script src="asset/js/Shop.js"></script>
   </body>
 </html>

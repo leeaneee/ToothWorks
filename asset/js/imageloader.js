@@ -38,3 +38,24 @@ window.addEventListener("DOMContentLoaded", async () => {
     const link = await getLink("waterFlosser"); 
     document.getElementById("waterFlosser").src = link;
 });
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("spray"); 
+    document.getElementById("spray").src = link;
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("strips"); 
+    document.getElementById("strips").src = link;
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("mint"); 
+    document.getElementById("mint").src = link;
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("mouthwash"); 
+    document.getElementById("mouthwash").src = link;
+});
+

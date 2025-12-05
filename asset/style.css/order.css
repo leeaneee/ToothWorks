@@ -97,3 +97,149 @@ section {
 .order-now-btn:hover {
   background-color: rgba(212, 178, 76, 1);
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-bottom: 3px solid rgba(0,0,0,0.06);
+  background-color: rgba(212, 178, 76, 0.8);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Montez', cursive;
+  font-size: 30px;
+  color: #353839;
+  text-align: center;
+  flex: 1;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-left a, .nav-right a {
+  text-decoration: none;
+  color: #353839;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  padding: 6px 8px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  min-width: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 5px;
+  background-color: rgba(212, 178, 76, 0.8);
+  box-shadow: rgba(0,0,0,0.2) 0px 8px 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+.dropdown-container:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: rgba(212, 178, 76, 0.95);
+  border-radius: 8px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: all 0.2s ease-in-out;
+  z-index: 200;
+}
+
+.profile-dropdown:hover .profile-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+footer {
+  padding: 28px 20px;
+  background: #f8f8f8;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+footer h2 {
+  margin: 0 0 6px;
+  font-family: 'Montez', cursive;
+  font-size: 45px;
+}
+
+footer h3 {
+  font-family: 'Alice', serif;
+  text-align: center;
+  font-size: x-large;
+}
+
+footer p {
+  margin-bottom: 5px;
+  font-family: 'Alice', serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+footer ul a {
+  text-decoration: none;
+  margin: 25px;
+  font-size: x-large;
+  gap: 20px;
+  text-align: center;
+  color: #353839;
+  cursor: pointer;
+}
+
+footer h4 {
+  margin: auto;
+  font-family: 'Alice', serif;
+  font-size: small;
+}
+
+
+@media (max-width: 768px) {
+  .nav-left, .nav-right {
+    gap: 10px;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .dropdown {
+    min-width: 80px;
+  }
+}
+

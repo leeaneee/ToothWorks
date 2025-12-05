@@ -1,68 +1,73 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  const signUpForm = document.querySelector(".signForm");
-  const inputs = signUpForm.querySelectorAll("input");
-  const errorMessages = signUpForm.querySelectorAll(".error-message");
-  const successMessage = signUpForm.querySelector(".success-message");
+  const signupForm = document.querySelector(".signForm");
+  const inputs = signupForm.querySelectorAll("input");
+  const errorMessages = signupForm.querySelectorAll(".error-message");
+  const successMessage = signupForm.querySelector(".success-message");
 
-  signUpForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+  signupForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // para di matic submit
+
     let valid = true;
 
     // Clear previous errors
-    errorMessages.forEach(msg => msg.textContent = "");
+    errorMessages.forEach(msg => {
+      msg.textContent = "";
+      msg.style.display = "none";
+    });
     inputs.forEach(input => input.style.border = "2px solid rgba(212, 178, 76, 0.8)");
+    successMessage.style.display = "none";
 
-    // Check first name
-    if (inputs[0].value == "") {
-    errorMessages.forEach(msg => msg.textContent = "");
-    inputs.forEach(input => input.style.border = "2px solid rgba(212, 178, 76, 0.8)");
-
-    // Validate first name
-    if (!inputs[0].value.trim()) {
+    // First Name
+    if (inputs[0].value === "") {
       errorMessages[0].textContent = "Invalid input";
+      errorMessages[0].style.display = "block";
       inputs[0].style.border = "2px solid red";
       valid = false;
     }
 
-    // Check last name
-    if (inputs[1].value == "") {
-
-    // Validate last name
-    if (!inputs[1].value.trim()) {
+    // Last Name
+    if (inputs[1].value === "") {
       errorMessages[1].textContent = "Invalid input";
+      errorMessages[1].style.display = "block";
       inputs[1].style.border = "2px solid red";
       valid = false;
     }
 
-    // Check email
-    if (inputs[2].value == "" || !inputs[2].value.includes("@")) {
-    // Validate email
-    if (!inputs[2].value.includes("@")) {
+    // Email
+    const email = inputs[2].value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "" || !emailRegex.test(email)) {
       errorMessages[2].textContent = "Invalid input";
+      errorMessages[2].style.display = "block";
       inputs[2].style.border = "2px solid red";
       valid = false;
     }
 
-    // Check password
-    if (inputs[3].value == "" || inputs[3].value.length < 6) {
-    // Validate password 
-    if (inputs[3].value.length < 6) {
+    // Password
+    if (inputs[3].value === "" || inputs[3].value.length < 6) {
       errorMessages[3].textContent = "Invalid input";
+      errorMessages[3].style.display = "block";
       inputs[3].style.border = "2px solid red";
       valid = false;
     }
 
-    // If all valid
+    // Show success message 
     if (valid) {
       successMessage.textContent = "Sign Up Successful!";
       successMessage.style.display = "block";
 
-      // Redirect to homepage
-      setTimeout(() => {
-        window.location.href = "home.html"; 
+      // Clear input after mag sign up
+      inputs.forEach(input => input.value = "");
+
+      // back 2 home
+      setTimeout(function() {
+        window.location.href = "home.html";
       }, 500);
     }
   });
 
 });
+
+
+

@@ -20,6 +20,21 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 window.addEventListener("DOMContentLoaded", async () => {
-    const link = await getLink("tongue"); 
+    const link = await getLink(""); 
     document.getElementById("tongue").src = link;
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("wax"); 
+    document.getElementById("wax").src = link;
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("holder"); 
+    document.getElementById("holder").src = link;
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const link = await getLink("waterFlosser"); 
+    document.getElementById("waterFlosser").src = link;
 });

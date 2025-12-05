@@ -1,0 +1,37 @@
+/* asset/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Montez&display=swap');
+
+body {
+  font-family: "Alice", serif;
+  background-color: #fff;
+  color: #353839;
+  margin: 0;
+  padding: 0;
+}
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #f8f8f8;
+  border-bottom: 2px solid rgba(212, 178, 76, 0.5);
+}
+
+nav.navbar a {
+  text-decoration: none;
+  color: #353839;
+  margin: 0 10px;
+}
+
+.logo h1 {
+  font-family: "Montez", cursive;
+  font-size: 28px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  background-color: #f7f7f7;
+  color: #353839;
+}

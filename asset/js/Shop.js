@@ -56,15 +56,15 @@ addToBag.addEventListener("click", () => {
       quantity: qty,
     });
   }
-  
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
   popup.classList.remove("show");
   mainContent.classList.remove("blur");
   alert(" Added to bag! Quantity: " + qty);
+});
 
-  function addToCart(product) {
+function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   const existingItem = cart.find(item => item.id === product.id);
@@ -78,5 +78,3 @@ addToBag.addEventListener("click", () => {
 
   alert(`${product.name} added to cart!`);
 }
-
-});

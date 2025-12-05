@@ -1,0 +1,146 @@
+/* ========================
+   RESET & GLOBAL STYLES
+======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alice', sans-serif;
+  color: #353839;
+  background-color: #f8f8f8;
+}
+
+/* ========================
+   NAVBAR
+======================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-left a, .nav-right a {
+  text-decoration: none;
+  color: #353839;
+  font-weight: 500;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+  color: #007bff;
+}
+
+/* LOGO */
+.logo h1 {
+  font-family: 'Montez', cursive;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+/* DROPDOWN */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  z-index: 10;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #353839;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-container:hover .dropdown {
+  display: block;
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+footer a {
+  color: #353839;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  color: #007bff;
+}
+
+footer h2, footer h3, footer h4, footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* ========================
+   HERO / MAIN SECTIONS
+======================== */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #e0f7fa;
+}
+
+.hero h2 {
+  font-family: 'Montez', cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.hero button:hover {
+  background-color: #0056b3;
+}

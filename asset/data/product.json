@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Toothworks Toothbrush Gentle Gum Care Soft Bristles",
+    "category": "dailycare",
+    "price": 75,
+    "image": "asset/img/toothbrush.jpg",
+    "description": "Soft bristles that gently clean your teeth while protecting your gums.",
+    "stock": 20
+  },
+  {
+    "id": 2,
+    "name": "Toothworks Toothpaste Gentle Whitening with Fluoride Protection",
+    "category": "dailycare",
+    "price": 109,
+    "image": "asset/img/toothpaste.jpg",
+    "description": "Gentle whitening toothpaste with fluoride protection.",
+    "stock": 30
+  },
+  {
+    "id": 3,
+    "name": "Toothworks Dental Floss Smooth-glide",
+    "category": "dailycare",
+    "price": 89,
+    "image": "asset/img/floss.jpg",
+    "description": "Removes plaque and cleans deep between teeth.",
+    "stock": 40
+  },
+  {
+    "id": 4,
+    "name": "Toothworks Tongue Scraper",
+    "category": "dailycare",
+    "price": 67,
+    "image": "asset/img/scraper.jpg",
+    "description": "Gently cleans the tongue for a healthier mouth.",
+    "stock": 25
+  },
+  {
+    "id": 5,
+    "name": "Toothworks Mouth Wash",
+    "category": "freshbreath",
+    "price": 126,
+    "image": "asset/img/mouthwash.jpg",
+    "description": "Fights bad breath with a quick refreshing mist.",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "name": "Toothworks Sugar-free Gum",
+    "category": "freshbreath",
+    "price": 62,
+    "image": "asset/img/gum.jpg",
+    "description": "Long-lasting freshness with tooth-friendly ingredients.",
+    "stock": 50
+  },
+  {
+    "id": 7,
+    "name": "Toothworks Whitening Strips",
+    "category": "freshbreath",
+    "price": 178,
+    "image": "asset/img/strips.jpg",
+    "description": "Reveals a whiter smile in minutes.",
+    "stock": 30
+  },
+  {
+    "id": 8,
+    "name": "Toothworks Orthodontic Wax",
+    "category": "dentaltools",
+    "price": 99,
+    "image": "asset/img/wax.jpg",
+    "description": "Protects gums and cheeks from braces irritation.",
+    "stock": 15
+  },
+  {
+    "id": 9,
+    "name": "Toothworks Toothbrush Holder",
+    "category": "dentaltools",
+    "price": 150,
+    "image": "asset/img/holder.jpg",
+    "description": "Hygienic storage for your daily essentials.",
+    "stock": 18
+  },
+  {
+    "id": 10,
+    "name": "Toothworks Water Flosser",
+    "category": "dentaltools",
+    "price": 389,
+    "image": "asset/img/waterfloss.jpg",
+    "description": "Powerful water pressure for fresher, healthier gums.",
+    "stock": 12
+  },
+  {
+    "id": 11,
+    "name": "Toothworks Tongue Cleaner Spray",
+    "category": "dentaltools",
+    "price": 79,
+    "image": "asset/img/spray.jpg",
+    "description": "Refreshes your tongue and removes odor-causing bacteria.",
+    "stock": 20
+  }
+]

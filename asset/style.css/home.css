@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Montez&display=swap');
-
-/* ===== Reset & Body ===== */
 * {
   margin: 0;
   padding: 0;
@@ -12,11 +9,26 @@ body, html {
   width: 100%;
   font-family: 'Alice', serif;
   overflow-x: hidden;
-  background-color: #fff;
-  color: #353839;
 }
 
-/* ===== Navbar ===== */
+/* Video background */
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.clinic-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -52,6 +64,7 @@ body, html {
   color: #353839;
   font-weight: 500;
   font-size: 16px;
+  font-family: "Alice", serif;
   padding: 6px 8px;
 }
 
@@ -135,92 +148,46 @@ body, html {
   transform: translateY(0);
 }
 
-/* ===== Order Page Layout ===== */
-.order-container {
-  max-width: 800px;
-  margin: 120px auto 50px; /* push below navbar */
-  padding: 20px;
-}
-
-/* ===== Tabs ===== */
-.tab-buttons {
+/* Main section */
+section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 20px;
-  border-bottom: 2px solid rgba(212, 178, 76, 0.5);
-}
-
-.tab-btn {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #f7f7f7;
-  border: none;
-  border-bottom: 3px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-btn.active {
-  background-color: rgba(212, 178, 76, 0.2);
-  border-bottom: 3px solid rgba(212, 178, 76, 0.8);
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* ===== Order Boxes ===== */
-.order-box, .history-box {
-  border: 2px solid rgba(212, 178, 76, 0.8);
-  border-radius: 5px;
-  padding: 15px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  align-items: center;
+  height: 100vh;
+  width: 100%;
   text-align: center;
+  color: #353839;
+  z-index: 5;
+  position: relative;
 }
 
-/* ===== Order Items ===== */
-.order-item {
+section h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+button {
   display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.order-item:last-child {
-  border-bottom: none;
-}
-
-/* ===== No Orders / History ===== */
-.no-orders {
-  font-size: 18px;
-  color: #777;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.order-now-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 25px;
   background-color: rgba(212, 178, 76, 0.8);
   color: #353839;
+  padding: 12px 30px;
   border: none;
-  border-radius: 5px;
+  font-size: 18px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
-.order-now-btn:hover {
+button:hover {
   background-color: white;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 footer {
   padding: 28px 20px;
   background: #f8f8f8;

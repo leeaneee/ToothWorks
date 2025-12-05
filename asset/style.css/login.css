@@ -144,7 +144,7 @@ main.log {
     padding: 28px 16px;
 }
 
-.loginText {
+.signUpText {
     font-size: 45px;
     margin: 8px 0;
     font-weight: 700;
@@ -184,21 +184,11 @@ main.log {
     border-color: rgba(212, 178, 76, 1);
 }
 
-<<<<<<< Updated upstream
 /* Error messageeeeeeeees */
-=======
-.signUp a {
-    color: #353839;
-    text-decoration: underline;
-}
-
-.signUp a:hover {
-    color: gold;
-}
-
-/* Error messages */
->>>>>>> Stashed changes
 .logForm .error-message {
+=======
+/* Error messages */
+.signForm .error-message {
     color: red;
     font-size: 14px;
     text-align: left;
@@ -214,7 +204,6 @@ main.log {
     display: none;
 }
 
-<<<<<<< Updated upstream
 .signUp a {
     color: #353839;
     text-decoration: underline;
@@ -225,8 +214,9 @@ main.log {
 }
 
 /* Submit button */
-=======
->>>>>>> Stashed changes
+
+
+/* Submit button */
 .createButton {
     width: 100%;
     height: 46px;
@@ -247,11 +237,12 @@ main.log {
     filter: brightness(.98);
 }
 
+/* Footer styling */
 footer {
-padding: 28px 20px;
-background: #f8f8f8;
-text-align: center;
-border-top: 1px solid rgba(0,0,0,0.04);
+    padding: 28px 20px;
+    background: #f8f8f8;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.04);
 }
 
 footer h2 {
@@ -262,7 +253,7 @@ footer h2 {
 
 footer h3 {
     font-family: 'Alice', serif;
-    text-align: center ;
+    text-align: center;
     font-size: x-large;
 }
 

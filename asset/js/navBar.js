@@ -57,3 +57,10 @@ document.getElementById("logout-link").addEventListener("click", async function 
     const link = await getLink("logout-link");
     window.location.href = link; 
 });
+// Redirect "Order History" button to order page
+const orderHistoryBtn = document.querySelector('.profile-buttons .profile-button:nth-child(2)');
+
+orderHistoryBtn.addEventListener("click", async function() {
+    const link = await getLink("order"); // fetch the order page link
+    window.location.href = link;
+});

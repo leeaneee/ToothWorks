@@ -5,7 +5,8 @@
   "dental-tools": "dentaltools.html",
   "about": "about.html",
   "reviews": "reviews.html",
-  "cart": "order.html",
+  "cart": "Cart.html",
   "user": "profile.html",
-  "logout-link": "login.html"
+  "logout-link": "login.html",
+  "order": "order.html"
 }

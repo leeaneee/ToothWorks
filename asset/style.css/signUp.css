@@ -130,11 +130,26 @@ main.sign {
 }
 
 .signForm input {
-    height: 40px;
+    height: 45px;
     padding: 8px 12px;
     font-size: 16px;
     border: 2px solid rgba(212, 178, 76, 0.8);
 }
+
+.signForm .error-message {
+  color: red;               
+  font-size: 14px;           
+  text-align: left;         
+  margin-top: 4px;           
+  display: block;           
+}
+
+
+.signForm input:focus {
+  outline: none;
+  border-color: rgba(212, 178, 76, 1);
+}
+
 
 .createButton {
     width: 100%;

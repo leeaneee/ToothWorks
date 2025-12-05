@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     let valid = true;
 
+    // Clear previous errors
+    errorMessages.forEach(msg => msg.textContent = "");
+    inputs.forEach(input => input.style.border = "2px solid rgba(212, 178, 76, 0.8)");
+
+    // Check first name
+    if (inputs[0].value == "") {
     errorMessages.forEach(msg => msg.textContent = "");
     inputs.forEach(input => input.style.border = "2px solid rgba(212, 178, 76, 0.8)");
 
@@ -19,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
       valid = false;
     }
 
+    // Check last name
+    if (inputs[1].value == "") {
+
     // Validate last name
     if (!inputs[1].value.trim()) {
       errorMessages[1].textContent = "Invalid input";
@@ -26,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
       valid = false;
     }
 
+    // Check email
+    if (inputs[2].value == "" || !inputs[2].value.includes("@")) {
     // Validate email
     if (!inputs[2].value.includes("@")) {
       errorMessages[2].textContent = "Invalid input";
@@ -33,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
       valid = false;
     }
 
+    // Check password
+    if (inputs[3].value == "" || inputs[3].value.length < 6) {
     // Validate password 
     if (inputs[3].value.length < 6) {
       errorMessages[3].textContent = "Invalid input";
@@ -45,10 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
       successMessage.textContent = "Sign Up Successful!";
       successMessage.style.display = "block";
 
-      // direct to homepage
+      // Redirect to homepage
       setTimeout(() => {
-        window.location.href = "home.html"; // Adjust path if homepage is in another folder
-      }, 1000);
+        window.location.href = "home.html"; 
+      }, 500);
     }
   });
 

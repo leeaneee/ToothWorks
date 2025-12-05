@@ -28,15 +28,25 @@ document.addEventListener("DOMContentLoaded", function() {
       valid = false;
     }
 
+<<<<<<< Updated upstream
     // successful login
+=======
+    // Success
+>>>>>>> Stashed changes
     if (valid) {
       successMessage.textContent = "Login Successful!";
       successMessage.style.display = "block";
 
+<<<<<<< Updated upstream
       // balik homepage
       setTimeout(function() {
         window.location.href = "home.html"; 
       }, 500);
+=======
+      setTimeout(() => {
+        window.location.href = "home.html"; // balik home
+      }, 1000);
+>>>>>>> Stashed changes
     }
 
   });

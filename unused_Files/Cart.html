@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToothWorks | Cart</title>
+    <link rel="stylesheet" href="asset/style.css/cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="asset/style.css/home/home.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        background-image: none !important;
+        background-color: #ffffff !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="home">Home</a>
+        <div class="dropdown-container">
+          <a href="shopall">Shop All▾</a>
+          <div class="dropdown">
+            <a href="dc">Daily Care</a>
+            <a href="fb">Fresh Breath</a>
+            <a href="dt">Dental Tools</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="reviews">Reviews</a>
+      </div>
+
+      <div class="logo">
+        <h1>ToothWorks</h1>
+      </div>
+
+      <div class="nav-right">
+        <a href="search"><i class="bi bi-search"></i></a>
+        <a href="cart"><i class="bi bi-bag"></i></a>
+        <a href="user"><i class="bi bi-person-circle"></i></a>
+      </div>
+    </nav>
+
+    <div class="containerbody">
+      <div class="leftBody">
+        <div class="container">
+          <h2 class="carttext">Cart</h2>
+          <button class="continueShopping">Continue Shopping</button>
+        </div>
+        <hr />
+        <div class="cart-items"></div>
+        <hr />
+      </div>
+
+      <div class="rightbody">
+        <form>
+          <div class="container">
+            <h4 id="sub">SUBTOTAL</h4>
+            <h3 id="subtotal-price">PHP 0.00</h3>
+          </div>
+          <hr />
+
+          <h4>Shipping address:</h4><br />
+          <input type="text" placeholder="House No. / Street" required id="address-line" /><br />
+
+          <h3 id="pay">Payment Method</h3><br />
+          <div class="paymentoptions">
+            <label class="radio-box">
+              <input type="radio" name="payment" id="cod" />
+              <span></span> Cash on Delivery
+            </label>
+            <label class="radio-box">
+              <input type="radio" name="payment" id="gcash" />
+              <span></span> GCash
+            </label>
+          </div>
+
+          <br />
+
+          <label id="checkbox">
+            <input type="checkbox" required />
+            <span>I agree to the Terms and Conditions</span>
+          </label>
+
+          <br />
+          <input type="submit" id="submitbutton" value="Place Order" />
+        </form>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="review-popup">
+      <div class="popup-box review-box">
+        <button class="close-popup">&times;</button>
+        <h2>Review Your Order</h2>
+        <div class="review-list"></div>
+        <div class="total-section">
+          <h3>Total: <span id="review-total">PHP 0.00</span></h3>
+        </div>
+        <div class="popup-buttons">
+          <button class="popup-btn review-confirm">CONFIRM</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="confirm-popup">
+      <div class="popup-box">
+        <h2>Are you sure to proceed?</h2>
+        <div class="popup-buttons">
+          <button class="popup-btn confirm">CONFIRM</button>
+          <button class="popup-btn cancel">CANCEL</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="success-popup">
+      <div class="popup-box">
+        <h2>Ordered Successfully!</h2>
+        <div class="popup-buttons">
+          <button class="popup-btn done">DONE</button>
+          <button class="popup-btn view">VIEW ORDER</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <h2>ToothWorks</h2>
+      <p>Smile Brighter, Live Happier</p>
+      <br /><br />
+      <h3>Your #Toothified smile awaits you!</h3>
+      <br /><br /><br />
+      <ul>
+        <a href="fb"><i class="bi bi-facebook"></i></a>
+        <a href="ig"><i class="bi bi-instagram"></i></a>
+        <a href="x"><i class="bi bi-twitter-x"></i></a>
+        <a href="tt"><i class="bi bi-tiktok"></i></a>
+        <a href="yt"><i class="bi bi-youtube"></i></a>
+      </ul>
+      <br /><br />
+      <h4>
+        <i class="bi bi-c-circle"></i>
+        <small><span>2025 ToothWorks Dental Clinic. All Rights Reserved.</span></small>
+      </h4>
+    </footer>
+
+    <script src="asset/js/cart.js"></script>
+  </body>
+</html>

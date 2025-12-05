@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.logo {
+    font-family: 'Montez', cursive;
+    font-size: 55px;
+    color: #353839;
+}
+
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 75px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 28px;
+border-bottom: 3px solid rgba(0,0,0,0.06);
+box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+background-color: rgba(212, 178, 76, 0.8); ;
+}
+
+.logo {
+    position: fixed;
+    left: 42%;
+    text-align: center;
+    font-family: 'Montez', cursive;
+    font-size: 30px;
+    color: #353839;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  padding: 6px 8px;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  transform: scale(.98);
+  opacity: .9;
+}
+
+.dropdown {
+    min-width: 90px;
+    padding: 15px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    background-color: rgba(212, 178, 76, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+.dropdown-container:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+}
+
+.dropdown a {
+    font-size: 14px;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    margin: 10px;
+}
+
+/* body */
+
+.containerbody
+{
+  display: flex;                
+  justify-content: space-between; 
+  align-items: flex-start;      
+  gap: 20px;                  
+  padding: 20px;
+}
+
+/* left body */
+.containerbody .leftBody{
+  width: 100%;    
+  height: 100%;      
+  max-width: 400px;    
+  max-height: 800px;
+  margin-top: 140px;  
+  margin-left: 150px;   /* left side*/
+  margin-right: auto;  /* center */
+  background: #f0f0f0;
+  font-family: "Alice", serif;
+  position: relative;
+  box-sizing: border-box;  /* ensures padding is included in width */
+
+  position: relative; /* para hindi mag overlap sa navigation bar*/
+  z-index: -1; 
+}
+
+.leftBody .itemimage {
+  width: 400px; /*auto width at height para pag nilagyan ng image automatic na siya malalagay doon*/
+  height: 400px;
+  border: 1px solid;
+  margin-right: 0px; /* space sa information ng item*/
+  float: center;
+}
+
+/* right body */
+.containerbody .rightBody
+{ 
+  height: 50%;               
+  width: 80%;
+  max-height: 600px;
+  max-width: 900px;
+  margin-top: 140px;  
+  margin-right: 150px;  
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.rightBody #ItemName label {
+  max-width: 300px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Alice", serif;
+  color: black;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.rightBody #rating {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rightBody #rating span
+{
+  font-size: 20px;
+  color: rgba(212, 178, 76, 0.8);
+}
+
+.rightBody #rating img {
+  width: 100px; /* rating stars */
+}
+
+.rightBody #price label {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #5f4b1a; 
+  margin: 10px 0;
+}
+
+.rightBody #productInfo p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.rightBody form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rightBody #numOfPurchase {
+  position: relative;          
+  width: 120px;              
+  height: 40px;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;   
+  box-sizing: border-box;
+}
+
+.rightBody #numOfPurchase label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* center number */
+  font-weight: 600;
+}
+
+.rightBody #numOfPurchase #minus {
+  position: absolute;
+  left: 0;
+  width: 35px;
+  height: 100%;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.rightBody #numOfPurchase #plus {
+  position: absolute;
+  right: 0;
+  width: 35px;
+  height: 100%;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.rightBody .purchaseRow {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between the two */
+}
+
+.rightBody #numOfPurchase {
+  position: relative;
+  width: 170px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.rightBody #numOfPurchase button {
+  width: 35px;
+  height: 100%;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.rightBody #numOfPurchase label {
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+}
+
+.rightBody input[type="submit"] {
+  background-color: #b8a46b;
+  color: black;
+  border: none;
+  padding: 15px 150px;
+  font-size: 16px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rightBody input[type="submit"]:hover {
+  background-color: #7a6e4a;
+}

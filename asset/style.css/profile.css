@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Alice", serif;
+}
+
+/* Navbar container that stays fixed and has links + logo */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  border-bottom: 3px solid rgba(0,0,0,0.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  background-color: rgba(212, 178, 76, 0.8);
+  z-index: 100;
+}
+/* Centered logo inside navbar */
+.logo {
+  position: fixed;
+  left: 42%;
+  text-align: center;
+  font-family: 'Montez', cursive;
+  font-size: 30px;
+  color: #353839;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-left a, .nav-right a {
+  text-decoration: none;
+  color: #353839;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Alice", serif;
+  padding: 6px 8px;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+  transform: scale(.98);
+  opacity: .9;
+}
+
+/* Dropdown menu for shop links */
+.dropdown {
+  min-width: 90px;
+  padding: 15px 8px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  border-radius: 5px;
+  background-color: rgba(212, 178, 76, 0.8);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+.dropdown-container:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown a {
+  font-size: 14px;
+  border-bottom: 1px solid #000000;
+  padding: 8px;
+  margin: 10px;
+}
+
+/* Profile dropdown that shows on hover */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  color: #353839;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: rgba(212, 178, 76, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: all 0.2s ease-in-out;
+}
+
+.profile-menu a {
+  color: #353839;
+  padding: 12px;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.profile-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+/* Navbar dropdown hover effect */
+.profile-dropdown:hover .profile-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Main profile form container */
+main.profile {
+  padding-top: 110px;
+}
+
+.profile-container {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(212, 178, 76, 0.6);
+}
+
+.profileForm {
+  width: 420px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 26px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(212, 178, 76, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.profileForm label {
+  font-size: 20px;
+  color: #353839;
+  text-align: left;
+}
+
+.profileForm input {
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid rgba(212, 178, 76, 0.8);
+  background-color: #fafafa;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.profile-button {
+  width: 100%;
+  height: 46px;
+  font-family: 'Alice', serif;
+  color: #353839;
+  font-size: large;
+  background-color: rgba(212, 178, 76, 0.8);
+  border: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.profile-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(.98);
+}
+
+/* Logout that appears on top of page */
+.logout-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 320px;
+}
+
+.logout-content h3 {
+  margin-bottom: 20px;
+  color: #353839;
+}
+
+.logout-actions {
+  display: flex;
+  justify-content: space-around;
+}
+/* Buttons inside logout */
+.yes-btn, .no-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Alice', serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.yes-btn {
+  background-color: rgba(212, 178, 76, 0.8);
+  color: #353839;
+}
+
+.no-btn {
+  background-color: #ccc;
+  color: #353839;
+}
+
+.no-btn:hover, .yes-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  padding: 28px 20px;
+  background: #f8f8f8;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  margin-top: 80px;
+}
+
+footer h2 {
+  margin: 0 0 6px;
+  font-family: 'Montez', cursive;
+  font-size: 45px;
+}
+
+footer h3 {
+  font-family: 'Alice', serif;
+  font-size: x-large;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 5px;
+  font-family: 'Alice', serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+footer ul a {
+  text-decoration: none;
+  margin: 25px;
+  font-size: x-large;
+  color: #353839;
+  cursor: pointer;
+}
+
+footer h4 {
+  margin: auto;
+  font-family: 'Alice', serif;
+  font-size: small;
+}

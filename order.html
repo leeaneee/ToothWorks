@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | ToothWorks</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Alice&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="asset/style.css/home/home.css">
+    <link rel="stylesheet" href="asset/style.css/order.css"> -->
+
+    <link rel="stylesheet" href="asset/style.css/home/home.css">
+    <link rel="stylesheet" href="asset/style.css/order.css">
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#" id="home">Home</a>
+        <div class="dropdown-container">
+          <a href="#" id="shop-all">Shop All▾</a>
+          <div class="dropdown">
+            <a href="#" id="daily-care">Daily Care</a>
+            <a href="#" id="fresh-breath">Fresh Breath</a>
+            <a href="#" id="dental-tools">Dental Tools</a>
+          </div>
+        </div>
+        <a href="#" id="about">About</a>
+        <a href="#" id="reviews">Reviews</a>
+      </div>
+
+      <div class="logo"><h1>ToothWorks</h1></div>
+
+      <div class="nav-right">
+        <a href="#" id="cart"><i class="bi bi-bag"></i></a>
+        <div class="profile-dropdown">
+          <a href="#" class="profile-icon"><i class="bi bi-person-circle"></i></a>
+          <div class="profile-menu">
+            <a href="#" id="user">View Profile</a>
+            <a href="#" id="logout-link">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="order-container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" id="currentTab">Current Order</button>
+        <button class="tab-btn" id="historyTab">Order History</button>
+      </div>
+
+      <div class="tab-content active" id="currentOrder">
+        <h2>Current Order</h2>
+        <div class="order-box" id="currentOrderBox"></div>
+      </div>
+
+      <div class="tab-content" id="orderHistory">
+        <h2>Order History</h2>
+        <div class="history-box" id="historyBox"></div>
+      </div>
+    </div>
+
+    <footer>
+      <h2>ToothWorks</h2>
+      <p>Smile Brighter, Live Happier</p>
+      <br><br>
+      <h3>Your #Toothified smile awaits you!</h3>
+      <br><br><br>
+      <ul>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-tiktok"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </ul>
+      <br><br>
+      <h4>
+        <i class="bi bi-c-circle"></i>
+        <small><span>2025 ToothWorks Dental Clinic. All Rights Reserved.</span></small>
+      </h4>
+    </footer>
+    <script src="asset/js/navBar.js"></script>
+    <script src="asset/js/order.js"></script>
+  </body>
+</html>

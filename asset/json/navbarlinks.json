@@ -7,5 +7,5 @@
   "reviews": "reviews.html",
   "cart": "order.html",
   "user": "profile.html",
-  "logout-link": "signUp.html"
+  "logout-link": "login.html"
 }

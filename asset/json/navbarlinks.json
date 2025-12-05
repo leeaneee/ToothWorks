@@ -1,0 +1,11 @@
+{
+  "home": "home.html",
+  "daily-care": "dailyCare.html",
+  "fresh-breath": "freshbreath.html",
+  "dental-tools": "dentaltools.html",
+  "about": "about.html",
+  "reviews": "reviews.html",
+  "cart": "order.html",
+  "user": "profile.html",
+  "logout-link": "signUp.html"
+}

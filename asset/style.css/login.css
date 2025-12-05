@@ -79,7 +79,7 @@
     margin: 10px 0;
 }
 
-
+/* Profile dropdown */
 .profile-dropdown {
     position: relative;
     display: inline-block;
@@ -133,11 +133,11 @@ body {
 }
 
 /* Main login form container */
-main.log {
+main.sign {
     padding-top: 110px;
 }
 
-.loginForm {
+.signUpForm {
     max-width: 680px;
     margin: 0 auto;
     text-align: center;
@@ -150,10 +150,9 @@ main.log {
     font-weight: 700;
     color: #353839;
     text-align: center;
-    text-decoration: none;
 }
 
-.logForm {
+.signForm {
     width: 420px;
     max-width: 100%;
     margin: 18px auto;
@@ -166,27 +165,24 @@ main.log {
     align-items: stretch;
 }
 
-.logForm label {
+.signForm label {
     font-size: 20px;
     color: #353839;
     text-align: left;
 }
 
-.logForm input {
+.signForm input {
     height: 45px;
     padding: 8px 12px;
     font-size: 16px;
     border: 2px solid rgba(212, 178, 76, 0.8);
 }
 
-.logForm input:focus {
+.signForm input:focus {
     outline: none;
     border-color: rgba(212, 178, 76, 1);
 }
 
-/* Error messageeeeeeeees */
-.logForm .error-message {
-=======
 /* Error messages */
 .signForm .error-message {
     color: red;
@@ -197,24 +193,12 @@ main.log {
 }
 
 /* Success message */
-.logForm .success-message {
+.signForm .success-message {
     color: green;
     font-size: 16px;
     margin-top: 10px;
     display: none;
 }
-
-.signUp a {
-    color: #353839;
-    text-decoration: underline;
-}
-
-.signUp a:hover {
-    color: gold;
-}
-
-/* Submit button */
-
 
 /* Submit button */
 .createButton {
@@ -279,5 +263,3 @@ footer h4 {
     font-family: 'Alice', serif;
     font-size: small;
 }
-
-

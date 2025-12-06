@@ -1,4 +1,5 @@
 
+//hindi ko na sha connect sa shop kasi mashadong akong tamad
 window.addEventListener("DOMContentLoaded", async () => {
   const res = await fetch("asset/json/items.json");
   const data = await res.json();

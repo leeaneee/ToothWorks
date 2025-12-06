@@ -18,7 +18,7 @@ function renderCart() {
   let subtotal = 0;
 
   cart.forEach((item, index) => {
-    subtotal += item.price * item.quantity;
+    subtotal += parseFloat(item.price) * item.quantity; // Ensure price is a number for calculations
 
     const itemHTML = document.createElement('div');
     itemHTML.classList.add('iteminfo');
@@ -35,7 +35,7 @@ function renderCart() {
         </div>
         <a class="remove">remove</a>
       </div>
-      <h3 class="price">PHP ${item.price.toFixed(2)}</h3>
+      <h3 class="price">PHP ${parseFloat(item.price).toFixed(2)}</h3>
     `;
 
     cartContainer.appendChild(itemHTML);
@@ -112,7 +112,7 @@ function placeOrder() {
     return;
   }
 
-  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const subtotal = cart.reduce((acc, item) => acc + parseFloat(item.price) * item.quantity, 0);
   const order = {
     id: Date.now(),
     date: new Date().toLocaleString(),
@@ -123,10 +123,9 @@ function placeOrder() {
   };
 
   // Save to CURRENT ORDERS ARRAY
-let currentOrders = JSON.parse(localStorage.getItem('currentOrder')) || [];
-currentOrders.push(order);
-localStorage.setItem('currentOrder', JSON.stringify(currentOrders));
-
+  let currentOrders = JSON.parse(localStorage.getItem('currentOrder')) || [];
+  currentOrders.push(order);
+  localStorage.setItem('currentOrder', JSON.stringify(currentOrders));
 
   // Clear cart
   cart = [];

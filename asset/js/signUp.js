@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
 
   const signupForm = document.querySelector(".signForm");
@@ -68,6 +69,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
-
-
-

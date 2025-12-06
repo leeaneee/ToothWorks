@@ -18,3 +18,18 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (ratingEl) ratingEl.textContent = item.rating;
   }
 });
+
+async function getImage()
+{
+
+}
+
+async function getPrice()
+{
+
+}
+
+async function getName()
+{
+
+}

@@ -132,76 +132,58 @@ body {
     background-color: white;
 }
 
-/* Main login form container */
-main.sign {
-    padding-top: 110px;
+main.log {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
 }
 
-.signUpForm {
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 28px 16px;
-}
-
-.signUpText {
-    font-size: 45px;
-    margin: 8px 0;
+/* Login title */
+.loginText {
+    font-size: 48px;
     font-weight: 700;
-    color: #353839;
     text-align: center;
+    color: #353839;
+    margin-bottom: 10px;
+    font-family: 'Alice', serif;
 }
 
-.signForm {
-    width: 420px;
-    max-width: 100%;
+/* FORM BOX */
+.loginForm {
+    width: 420px; max-width:100%;
+    height: 280px;
     margin: 18px auto;
     padding: 26px;
-    background: #fff;
-    box-shadow: 0 8px 30px rgba(212, 178, 76, 0.8);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: stretch;
+    background:#fff;
+    box-shadow:0 8px 30px rgba(212, 178, 76, 0.8);
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    align-items:stretch;
 }
 
-.signForm label {
-    font-size: 20px;
-    color: #353839;
-    text-align: left;
-}
-
-.signForm input {
-    height: 45px;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid rgba(212, 178, 76, 0.8);
-}
-
-.signForm input:focus {
-    outline: none;
-    border-color: rgba(212, 178, 76, 1);
-}
-
-/* Error messages */
-.signForm .error-message {
-    color: red;
-    font-size: 14px;
-    text-align: left;
-    margin-top: 4px;
-    display: block;
-}
-
-/* Success message */
-.signForm .success-message {
-    color: green;
-    font-size: 16px;
-    margin-top: 10px;
+/* Remove labels (the example design uses placeholders only) */
+.loginForm label {
     display: none;
 }
 
-/* Submit button */
-.createButton {
+/* Input fields: thin border & soft look */
+.loginForm input {
+    height: 55px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #d4b24c;
+    border-radius: 2px;
+    font-family: 'Alice', serif;
+}
+
+.loginForm input:focus {
+    outline: none;
+    border-color: #c19e3b;
+}
+
+/* SIGN IN BUTTON */
+.logButton {
     width: 100%;
     height: 46px;
     font-family: 'Alice', serif;
@@ -213,12 +195,33 @@ main.sign {
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: transform 0.12s ease, filter 0.12s ease;
+    transition: transform .12s ease, filter .12s ease;
 }
 
-.createButton:hover {
-    transform: translateY(-2px);
-    filter: brightness(.98);
+.signButton:hover {
+    opacity: 0.9;
+}
+
+.signUp {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Alice', serif;
+    font-size: 15px;
+}
+
+.signUp a {
+    color: #353839;
+    text-decoration: underline;
+}
+
+.success-message {
+    text-align: center;
+    font-family: 'Alice', serif;
+    color: green;
+}
+
+.error-message{
+    color: red;
 }
 
 /* Footer styling */

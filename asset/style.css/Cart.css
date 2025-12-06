@@ -272,11 +272,47 @@ z-index: 9999; /* para pwede pang ma click yung lahat ng item sa navbar */
 }
 
 .leftBody .remove {
-  color: gray;
-  padding: 20px; /* pang align para mas center yung text*/
-  text-align: center;  /* para yung text centered */
+  color: #dc3545; /* red color */
+  padding: 5px 10px; /* small padding for click area */
+  font-size: 14px;
+  text-align: center;
   cursor: pointer;
+  display: inline-block;
+  margin-top: 5px; /* small gap below quantity buttons */
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
+
+.quantity-btn,
+.remove-btn {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.remove-btn {
+  color: red;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remove-btn i {
+  pointer-events: none;
+}
+
 
 /* right body */
 .rightbody
@@ -508,4 +544,114 @@ footer h4 {
     margin: auto;
     font-family: 'Alice', serif;
     font-size: small;
+}/* POPUP GENERAL */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.popup-box {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  width: 45%;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #008cff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #ddd;
+}
+
+/* Small animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* ===== POPUP STYLES ===== */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-content h3 {
+  margin-bottom: 15px;
+  font-family: 'Alice', serif;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel-btn, .done-btn {
+  background-color: #ccc;
+}
+
+.confirm-btn, .view-order-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.popup-buttons button:hover {
+  opacity: 0.8;
 }

@@ -1,9 +1,11 @@
+// ====== CART PAGE ======
 const cartContainer = document.querySelector('.cart-items');
 const subtotalText = document.querySelector('#subtotal-price');
 const continueBtn = document.querySelector('.continueShopping');
-
+const placeOrderBtn = document.querySelector('#submitbutton'); // Place Order button
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+// Render cart items
 function renderCart() {
   cartContainer.innerHTML = '';
 
@@ -43,11 +45,13 @@ function renderCart() {
   subtotalText.textContent = `PHP ${subtotal.toFixed(2)}`;
 }
 
+// Update cart in localStorage
 function updateCart() {
   localStorage.setItem('cart', JSON.stringify(cart));
   renderCart();
 }
 
+// Cart buttons functionality
 cartContainer.addEventListener('click', (e) => {
   const itemEl = e.target.closest('.iteminfo');
   if (!itemEl) return;
@@ -68,4 +72,91 @@ continueBtn.addEventListener('click', () => {
   window.location.href = 'Shop.html';
 });
 
+// ===== PLACE ORDER POPUP =====
+placeOrderBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (cart.length === 0) return alert("Your cart is empty.");
+  showConfirmPopup();
+});
+
+// Confirm order popup
+function showConfirmPopup() {
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+  popup.innerHTML = `
+    <div class="popup-content">
+      <h3>Confirm Order?</h3>
+      <div class="popup-buttons">
+        <button class="cancel-btn">Cancel</button>
+        <button class="confirm-btn">Confirm</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  popup.querySelector('.cancel-btn').addEventListener('click', () => popup.remove());
+
+  popup.querySelector('.confirm-btn').addEventListener('click', () => {
+    popup.remove();
+    placeOrder();
+  });
+}
+
+// Place order (store only as CURRENT order)
+function placeOrder() {
+  const address = document.querySelector('#address-line').value.trim();
+  const payment = document.querySelector('input[name="payment"]:checked');
+
+  if (!address || !payment) {
+    alert("Please enter address and select payment method.");
+    return;
+  }
+
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const order = {
+    id: Date.now(),
+    date: new Date().toLocaleString(),
+    items: cart,
+    address: address,
+    payment: payment.value,
+    total: subtotal
+  };
+
+  // Save to CURRENT ORDERS ARRAY
+let currentOrders = JSON.parse(localStorage.getItem('currentOrder')) || [];
+currentOrders.push(order);
+localStorage.setItem('currentOrder', JSON.stringify(currentOrders));
+
+
+  // Clear cart
+  cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+
+  showSuccessPopup();
+}
+
+// Success popup after placing order
+function showSuccessPopup() {
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+  popup.innerHTML = `
+    <div class="popup-content">
+      <h3>Order Placed!</h3>
+      <p>What would you like to do?</p>
+      <div class="popup-buttons">
+        <button class="view-order-btn">View Order</button>
+        <button class="done-btn">Done</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  popup.querySelector('.view-order-btn').addEventListener('click', () => {
+    window.location.href = 'Order.html';
+  });
+  popup.querySelector('.done-btn').addEventListener('click', () => popup.remove());
+}
+
+// Initial render
 renderCart();

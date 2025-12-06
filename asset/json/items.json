@@ -1,0 +1,70 @@
+
+{
+  "floss": {
+    "img": "asset/img/floss.jpg",
+    "info": "Toothworks Dental Floss Smooth-glide Floss that Removes Plaque and Cleans Deep",
+    "price": "PHP 89.00",
+    "rating": "★ 5.0"
+  },
+  "holder": {
+    "img": "asset/img/holder.jpg",
+    "info": "Toothworks Toothbrush Holder - Hygienic storage for your daily essentials.",
+    "price": "PHP 150.00",
+    "rating": "★ 5.0"
+  },
+  "mint": {
+    "img": "asset/img/mint.jpg",
+    "info": "Toothworks Sugar free gum - Long-lasting freshness with tooth-friendly ingredients.",
+    "price": "PHP 62.00",
+    "rating": "★ 5.0"
+  },
+  "mouthwash": {
+    "img": "asset/img/mouthwash.jpg",
+    "info": "ToothWorks Mouth Wash - Fights bacteria and freshens breath instantly.",
+    "price": "PHP 103.00",
+    "rating": "★ 5.0"
+  },
+  "spray": {
+    "img": "asset/img/spray.jpg",
+    "info": "ToothWorks Mouth Spray Instant freshness, anytime. One spray, endless confidence.",
+    "price": "PHP 126.00",
+    "rating": "★ 5.0"
+  },
+  "strips": {
+    "img": "asset/img/strips.jpg",
+    "info": "Toothworks Sugar free gum - Long-lasting freshness with tooth-friendly ingredients.",
+    "price": "PHP 178.00",
+    "rating": "★ 5.0"
+  },
+  "tongue": {
+    "img": "asset/img/tongue.png",
+    "info": "Toothworks Tongue Scraper Gently Cleans the Tongue for a Healthier Mouth",
+    "price": "PHP 67.00",
+    "rating": "★ 5.0"
+  },
+  "toothbrush": {
+    "img": "asset/img/toothbrush.jpg",
+    "info": "Toothworks Toothbrush Gentle Gum Care Soft Bristles",
+    "price": "PHP 75.00",
+    "rating": "★ 5.0"
+  },
+  "toothpaste": {
+    "img": "asset/img/toothpaste.jpg",
+    "info": "Toothworks Toothpaste Gentle Whitening with Fluoride Protection",
+    "price": "PHP 109.00",
+    "rating": "★ 5.0"
+  },
+  "waterFlosser": {
+    "img": "asset/img/waterFlosser.jpg",
+    "info": "Toothworks Water Floss - Powerful water pressure for fresher, healthier gums.",
+    "price": "PHP 389.00",
+    "rating": "★ 5.0"
+  },
+  "wax": {
+    "img": "asset/img/wax.jpg",
+    "info": "Toothworks Orthodontic Wax - Protects gums and cheeks from braces irritation.",
+    "price": "PHP 99.00",
+    "rating": "★ 5.0"
+  }
+}
+

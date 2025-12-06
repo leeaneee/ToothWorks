@@ -9,6 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
   </head>
+  <!-- CONFIRM ORDER POPUP -->
+<div id="confirmPopup" class="popup-overlay hidden">
+  <div class="popup-box">
+    <h2>Confirm Your Order</h2>
+    <p id="confirm-details"></p>
+
+    <div class="popup-buttons">
+      <button id="confirmOrderBtn" class="btn-primary">Confirm</button>
+      <button id="cancelOrderBtn" class="btn-secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup-overlay hidden">
+  <div class="popup-box">
+    <h2>Order Successfully Placed!</h2>
+    <p id="success-msg"></p>
+
+    <div class="popup-buttons">
+      <button id="viewOrderBtn" class="btn-primary">View Order</button>
+      <button id="doneBtn" class="btn-secondary">Done</button>
+    </div>
+  </div>
+</div>
+
   <body>
     <nav class="navbar">
       <div class="nav-left">

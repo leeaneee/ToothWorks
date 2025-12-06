@@ -1,65 +1,111 @@
-// Tab switching
+// ====== ORDER PAGE ======
 const currentTab = document.getElementById("currentTab");
 const historyTab = document.getElementById("historyTab");
-const currentOrder = document.getElementById("currentOrder");
-const orderHistory = document.getElementById("orderHistory");
+const currentOrderSection = document.getElementById("currentOrder");
+const orderHistorySection = document.getElementById("orderHistory");
 
 currentTab.addEventListener("click", () => {
   currentTab.classList.add("active");
   historyTab.classList.remove("active");
-  currentOrder.classList.add("active");
-  orderHistory.classList.remove("active");
+  currentOrderSection.classList.add("active");
+  orderHistorySection.classList.remove("active");
 });
 
 historyTab.addEventListener("click", () => {
   historyTab.classList.add("active");
   currentTab.classList.remove("active");
-  orderHistory.classList.add("active");
-  currentOrder.classList.remove("active");
+  orderHistorySection.classList.add("active");
+  currentOrderSection.classList.remove("active");
 });
 
-// Dummy data (change these arrays later when integrated with cart)
-const currentOrderItems = []; // Empty = no current orders
-const orderHistoryItems = []; // Empty = no history
-
-const currentOrderBox = document.getElementById("currentOrderBox");
-const historyBox = document.getElementById("historyBox");
+// Load orders from localStorage
+let currentOrders = JSON.parse(localStorage.getItem('currentOrder')) || [];
+let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
 
 function renderOrders() {
-  // ===== Current Order =====
-  if (currentOrderItems.length === 0) {
+  // ===== Current Orders =====
+  if (currentOrders.length === 0) {
     currentOrderBox.innerHTML = `
-      <p class="no-orders">No orders yet.</p>
-      <button class="order-now-btn" onclick="window.location.href='shop.html'">
+      <p class="no-orders">No current orders.</p>
+      <button class="order-now-btn" onclick="window.location.href='Shop.html'">
         Order Now
       </button>
     `;
   } else {
-    // Show items and hide button
-    currentOrderBox.innerHTML = currentOrderItems
-      .map(item => `
-        <div class="order-item">
-          <span>${item.name}</span>
-          <span>$${item.price.toFixed(2)}</span>
-        </div>
-      `)
-      .join("");
+    currentOrderBox.innerHTML = currentOrders.map((order, oIdx) => `
+      <div class="current-order-detail">
+        <h4>Order ID: ${order.id}</h4>
+        <h4>Date: ${order.date}</h4>
+        <h4>Address: ${order.address}</h4>
+        <h4>Payment: ${order.payment}</h4>
+        <h4>Total: PHP ${order.total.toFixed(2)}</h4>
+        <hr>
+        ${order.items.map(item => `
+          <div class="order-item">
+            <img src="${item.img}" class="itemimage" alt="${item.name}">
+            <span>${item.name} x ${item.quantity}</span>
+            <span>PHP ${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `).join('')}
+        <button class="transaction-complete-btn" data-index="${oIdx}">Transaction Complete</button>
+      </div>
+    `).join('');
+
+    // Transaction Complete buttons functionality
+    const transactionBtns = currentOrderBox.querySelectorAll('.transaction-complete-btn');
+    transactionBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const index = e.target.dataset.index;
+        // Move selected order to history
+        orderHistory.push(currentOrders[index]);
+        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
+        // Remove from current orders
+        currentOrders.splice(index, 1);
+        localStorage.setItem('currentOrder', JSON.stringify(currentOrders));
+
+        renderOrders();
+        alert("Transaction Completed! Order moved to history.");
+      });
+    });
   }
 
   // ===== Order History =====
-  if (orderHistoryItems.length === 0) {
+  if (orderHistory.length === 0) {
     historyBox.innerHTML = `<p class="no-orders">No order history.</p>`;
   } else {
-    historyBox.innerHTML = orderHistoryItems
-      .map(order => `
-        <div class="order-item">
-          <span>${order.name}</span>
-          <span>$${order.price.toFixed(2)}</span>
-        </div>
-      `)
-      .join("");
+    historyBox.innerHTML = orderHistory.map((order, idx) => `
+      <div class="history-order-detail">
+        <h4>Order ID: ${order.id}</h4>
+        <h4>Date: ${order.date}</h4>
+        <h4>Address: ${order.address}</h4>
+        <h4>Payment: ${order.payment}</h4>
+        <h4>Total: PHP ${order.total.toFixed(2)}</h4>
+        <hr>
+        ${order.items.map(item => `
+          <div class="order-item">
+            <img src="${item.img}" class="itemimage" alt="${item.name}">
+            <span>${item.name} x ${item.quantity}</span>
+            <span>PHP ${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `).join('')}
+        <button class="remove-history-btn" data-index="${idx}">Remove</button>
+      </div>
+    `).join('');
+
+    // Remove history functionality
+    const removeBtns = historyBox.querySelectorAll('.remove-history-btn');
+    removeBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const index = e.target.dataset.index;
+        orderHistory.splice(index, 1);
+        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+        renderOrders();
+      });
+    });
   }
 }
+
 
 // Initial render
 renderOrders();

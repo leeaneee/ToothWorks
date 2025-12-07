@@ -1,8 +1,10 @@
-// ====== ORDER PAGE ======
+
 const currentTab = document.getElementById("currentTab");
 const historyTab = document.getElementById("historyTab");
 const currentOrderSection = document.getElementById("currentOrder");
 const orderHistorySection = document.getElementById("orderHistory");
+const currentOrderBox = document.getElementById("currentOrderBox");
+const historyBox = document.getElementById("historyBox");
 
 currentTab.addEventListener("click", () => {
   currentTab.classList.add("active");
@@ -18,12 +20,12 @@ historyTab.addEventListener("click", () => {
   currentOrderSection.classList.remove("active");
 });
 
-// Load orders from localStorage
+// Load orders 
 let currentOrders = JSON.parse(localStorage.getItem('currentOrder')) || [];
 let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
 
 function renderOrders() {
-  // ===== Current Orders =====
+  // Current Orders 
   if (currentOrders.length === 0) {
     currentOrderBox.innerHTML = `
       <p class="no-orders">No current orders.</p>
@@ -38,31 +40,38 @@ function renderOrders() {
         <h4>Date: ${order.date}</h4>
         <h4>Address: ${order.address}</h4>
         <h4>Payment: ${order.payment}</h4>
-        <h4>Total: PHP ${order.total.toFixed(2)}</h4>
+        <h4>Total: PHP ${(parseFloat(order.total) || 0).toFixed(2)}</h4>
         <hr>
-        ${order.items.map(item => `
-          <div class="order-item">
-            <img src="${item.img}" class="itemimage" alt="${item.name}">
-            <span>${item.name} x ${item.quantity}</span>
-            <span>PHP ${(item.price * item.quantity).toFixed(2)}</span>
-          </div>
-        `).join('')}
+        ${order.items.map(item => {
+          const itemPrice = parseFloat(item.price) || 0; 
+          return `
+            <div class="order-item">
+              <img src="${item.img}" class="itemimage" alt="${item.name}">
+              <span>${item.name} x ${item.quantity}</span>
+              <span>PHP ${(itemPrice * item.quantity).toFixed(2)}</span>
+            </div>
+          `;
+        }).join('')}
         <button class="transaction-complete-btn" data-index="${oIdx}">Transaction Complete</button>
       </div>
     `).join('');
 
-    // Transaction Complete buttons functionality
+    // Transaction Complete buttons
     const transactionBtns = currentOrderBox.querySelectorAll('.transaction-complete-btn');
     transactionBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         const index = e.target.dataset.index;
-        // Move selected order to history
+
         orderHistory.push(currentOrders[index]);
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
-        // Remove from current orders
+        console.log("current orders "+currentOrders);
+        console.log("order history "+orderHistory)
+
         currentOrders.splice(index, 1);
         localStorage.setItem('currentOrder', JSON.stringify(currentOrders));
+
+        console.log("index "+index)
 
         renderOrders();
         alert("Transaction Completed! Order moved to history.");
@@ -70,7 +79,6 @@ function renderOrders() {
     });
   }
 
-  // ===== Order History =====
   if (orderHistory.length === 0) {
     historyBox.innerHTML = `<p class="no-orders">No order history.</p>`;
   } else {
@@ -80,32 +88,37 @@ function renderOrders() {
         <h4>Date: ${order.date}</h4>
         <h4>Address: ${order.address}</h4>
         <h4>Payment: ${order.payment}</h4>
-        <h4>Total: PHP ${order.total.toFixed(2)}</h4>
+        <h4>Total: PHP ${(parseFloat(order.total) || 0).toFixed(2)}</h4>
         <hr>
-        ${order.items.map(item => `
-          <div class="order-item">
-            <img src="${item.img}" class="itemimage" alt="${item.name}">
-            <span>${item.name} x ${item.quantity}</span>
-            <span>PHP ${(item.price * item.quantity).toFixed(2)}</span>
-          </div>
-        `).join('')}
-        <button class="remove-history-btn" data-index="${idx}">Remove</button>
+        ${order.items.map(item => {
+          const itemPrice = parseFloat(item.price) || 0; 
+          return `
+            <div class="order-item">
+              <img src="${item.img}" class="itemimage" alt="${item.name}">
+              <span>${item.name} x ${item.quantity}</span>
+              <span>PHP ${(itemPrice * item.quantity).toFixed(2)}</span>
+            </div>
+          `;
+        }).join('')}
+        <button class="remove-history-btn" data-index="${idx}">Remove from History</button>
       </div>
     `).join('');
 
-    // Remove history functionality
     const removeBtns = historyBox.querySelectorAll('.remove-history-btn');
     removeBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         const index = e.target.dataset.index;
-        orderHistory.splice(index, 1);
-        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
-        renderOrders();
+        if (confirm("Are you sure you want to remove this order from history?")) {
+          orderHistory.splice(index, 1);
+          localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+          renderOrders();
+        }
       });
     });
   }
+
+  console.log("Current Orders:", currentOrders);
+  console.log("Order History:", orderHistory);
 }
 
-
-// Initial render
 renderOrders();

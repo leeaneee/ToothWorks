@@ -243,3 +243,37 @@ footer h4 {
   }
 }
 
+/* for images */
+
+.current-order-detail
+{
+    margin-bottom: 20px;
+}
+
+.current-order-detail .order-item 
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.history-order-detail .order-item
+{
+  display: flex;
+  flex-direction: column;
+}
+
+img
+{
+  width: 70%;
+  height: 70%;
+  margin-left: 15%;
+}
+
+button
+{
+  width: 100%;
+  display: flex;
+  align-items: center;      
+  justify-content: center;  
+}
+
